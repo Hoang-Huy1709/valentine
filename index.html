@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Nunito";
+      }
+
+      img {
+        width: 300px;
+        height: auto;
+        border-radius: 50px;
+        margin-top: 150px;
+        border: 2px #b10000 solid;
+      }
+
+      button {
+        -webkit-appearance: none;
+        appearance: none;
+        font-family: "Nunito";
+        background: #ffffff;
+        border-radius: 90px;
+        height: 40px;
+        border: 2px #b10000 solid;
+        color: #000;
+        font-size: 20px;
+        box-shadow: 3px 3px 0px #b10000;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        box-shadow: 5px 5px 0px #b10000;
+      }
+
+      #left {
+        transform-origin: top center;
+      }
+
+      #ui {
+        transform: scale(1.5);
+      }
+
+      #letter{
+        display: none;
+      }
+
+      a{
+        color: #b10000;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <table id="ui" width="100%" height="100%">
+      <tbody>
+        <tr>
+          <td align="center" valign="middle">
+            <!-- GIF -->
+            <img
+              id="gif"
+              src="/assets/IMG_0749.jpg"
+              alt="photo"
+            /><br /><br />
+
+            <!-- Text -->
+            <div id="text">Lâm Anh, hôm nay em có nhớ anh khônggg ???</div>
+            <br />
+
+            <!-- Buttons -->
+            <button id="left">Có</button>
+            <button id="right">Không</button>
+            <button id="letter">
+              <a href="/letter.html">Xem thông điệp của hôm nay ^^</a>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      const left = document.getElementById("left");
+      const right = document.getElementById("right");
+      const gif = document.getElementById("gif");
+      const text = document.getElementById("text");
+      const letter = document.getElementById("letter");
+
+      let clicks = 0;
+
+      const scales = [
+        [1.6, 1.6],
+        [2.2, 2.4],
+        [3.0, 3.4],
+        [4.2, 5.4],
+        [6.7, 8.0],
+      ];
+
+      const texts = [
+        "Em chắc chưa?",
+        "Chắc chưa, Chắc chưa?",
+        "Phải nhớ nhờ nhờ rùi chứ",
+        "Nhớ đi chứ pleaseeee",
+        "Ấn cóooo đi ạ",
+      ];
+
+      right.onclick = () => {
+        if (clicks < texts.length) {
+          right.innerText = texts[clicks];
+
+          const s = scales[clicks];
+          left.style.transform = "scale(" + s[0] + "," + s[1] + ")";
+          left.style.position = "relative";
+          left.style.zIndex = 9999;
+
+          clicks++;
+        }
+      };
+
+      left.onclick = () => {
+        gif.src = "/assets/IMG_9472.jpg";
+        gif.style.border = "2px #b10000 solid"
+        text.innerText = "YAAYYY!!!";
+        letter.style.display = "block"
+        left.style.display = "none";
+        right.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
