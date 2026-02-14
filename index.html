@@ -11,12 +11,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>Document</title>
     <style>
+
+      *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
       body {
         font-family: "Nunito";
+        font-size: 13px;
+      }
+
+      table{
+        width: 100%;
       }
 
       img {
-        width: 300px;
+        width: 50%;
         height: auto;
         border-radius: 50px;
         margin-top: 150px;
@@ -29,12 +41,12 @@
         font-family: "Nunito";
         background: #ffffff;
         border-radius: 90px;
-        height: 40px;
         border: 2px #b10000 solid;
         color: #000;
-        font-size: 20px;
+        padding: 10px;
         box-shadow: 3px 3px 0px #b10000;
         transition: 0.3s;
+        font-size: 13px;
       }
 
       button:hover {
@@ -55,32 +67,33 @@
 
       a{
         color: #b10000;
+        font-size: 13px;
       }
 
 
     </style>
   </head>
   <body>
-    <table id="ui" width="100%" height="100%">
+    <table id="ui">
       <tbody>
         <tr>
           <td align="center" valign="middle">
             <!-- GIF -->
             <img
               id="gif"
-              src="assets/IMG_0749.jpg"
+              src="/assets/IMG_0749.jpg"
               alt="photo"
             /><br /><br />
 
             <!-- Text -->
-            <div id="text">Lâm Anh, hôm nay em có nhớ anh khônggg ???</div>
+            <div id="text">Lâm Anh, hôm nay em <br>có nhớ anh khônggg ???</div>
             <br />
 
             <!-- Buttons -->
             <button id="left">Có</button>
             <button id="right">Không</button>
             <button id="letter">
-              <a href="letter.html">Xem thông điệp của hôm nay ^^</a>
+              <a href="/letter.html">Xem thông điệp của hôm nay ^^</a>
             </button>
           </td>
         </tr>
@@ -126,7 +139,7 @@
       };
 
       left.onclick = () => {
-        gif.src = "assets/IMG_9472.jpg";
+        gif.src = "/assets/IMG_9472.jpg";
         gif.style.border = "2px #b10000 solid"
         text.innerText = "YAAYYY!!!";
         letter.style.display = "block"
@@ -134,5 +147,6 @@
         right.style.display = "none";
       };
     </script>
+
   </body>
 </html>
